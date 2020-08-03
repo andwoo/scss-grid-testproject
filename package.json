@@ -11,6 +11,10 @@
     "server": "node ./server/Server.js",
     "lint": "yarn eslint . --fix --ext .js,.jsx,.ts,.tsx"
   },
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "jest": {
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
@@ -34,6 +38,7 @@
     "@types/webpack-env": "1.15.2",
     "@typescript-eslint/eslint-plugin": "2.29.0",
     "@typescript-eslint/parser": "2.29.0",
+    "@andwoo/scss-grid": "1.0.0",
     "autoprefixer": "9.7.6",
     "awesome-typescript-loader": "5.2.1",
     "babel-loader": "8.1.0",

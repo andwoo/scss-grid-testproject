@@ -1,0 +1,3 @@
+[submodule "packages/scss-grid"]
+	path = packages/scss-grid
+	url = ../scss-grid.git

@@ -59,6 +59,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-hot-loader": "4.12.20",
+    "react-router-dom": "5.2.0",
     "sass-loader": "8.0.2",
     "source-map-loader": "0.2.4",
     "ts-jest": "25.4.0",

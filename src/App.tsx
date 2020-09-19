@@ -1,45 +1,69 @@
 import * as React from 'react';
 import { hot } from 'react-hot-loader';
-import { Grid, Column, ColumnLineBreak } from '@andwoo/scss-grid';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import { Layout, LayoutItem } from '@andwoo/scss-grid';
+import { HomeScreen } from './screens/HomeScreen';
+import { ColumnsScreen } from './screens/ColumnsScreen';
+import { RowsScreen } from './screens/RowsScreen';
+
+const rootStyle: React.CSSProperties = {
+  width: '100vw',
+  height: '100vh',
+  backgroundColor: "#f7f7f7"
+}
+
+const navStyle: React.CSSProperties = {
+  padding: 20,
+  backgroundColor: "#e8e8e8"
+}
+
+const navItemStyle: React.CSSProperties = {
+  display: 'inline-block',
+  fontSize: '2rem',
+  fontWeight: 300,
+  marginRight: '1rem'
+}
 
 class App extends React.Component {
   render(): JSX.Element {
     return (
-      <div style={{ width: '100vw', height: '100vh' }}>
-        <Grid>
-          <Column>
-            <p>Hello There!</p>
-          </Column>
-          <Column>
-            <Column>
-              <p>Hi!</p>
-            </Column>
-            <Column style={{ height: 200 }}>
-              <Grid>
-                <Column style={{ backgroundColor: "#ff0000", height: '50%', width: '33%' }}>
-                  <p>1</p>
-                </Column>
-                <Column style={{ backgroundColor: "#f000f0", height: '50%', width: '33%' }}>
-                  <p>2</p>
-                </Column>
-                <ColumnLineBreak />
-                <Column style={{ backgroundColor: "#f000f0", height: '50%', width: '33%' }} >
-                  <p>3</p>
-                </Column>
-                <Column style={{ backgroundColor: "#f000f0", height: '50%', width: '33%' }} >
-                  <p>4</p>
-                </Column>
-                <Column style={{ backgroundColor: "#f000f0", height: '50%', width: '33%' }}>
-                  <p>5</p>
-                </Column>
-                <Column style={{ backgroundColor: "#f000f0", height: '50%', width: '33%' }}>
-                  <p>6</p>
-                </Column>
-              </Grid>
-            </Column>
-          </Column>
-        </Grid>
-      </div >
+      <Router>
+        <Layout direction="row" style={rootStyle}>
+          <LayoutItem style={navStyle}>
+            <nav>
+              <ul>
+                <li style={navItemStyle}>
+                  <Link to="/">Home</Link>
+                </li>
+                <li style={navItemStyle}>
+                  <Link to="/columns">Columns</Link>
+                </li>
+                <li style={navItemStyle}>
+                  <Link to="/rows">Rows</Link>
+                </li>
+              </ul>
+            </nav>
+          </LayoutItem>
+          <LayoutItem size='full'>
+            <Switch>
+              <Route path="/rows">
+                <RowsScreen />
+              </Route>
+              <Route path="/columns">
+                <ColumnsScreen />
+              </Route>
+              <Route path="*">
+                <HomeScreen />
+              </Route>
+            </Switch>
+          </LayoutItem>
+        </Layout >
+      </Router>
     );
   }
 }

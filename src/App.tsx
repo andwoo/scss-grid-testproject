@@ -34,7 +34,7 @@ class App extends React.Component {
     return (
       <Router>
         <Layout direction="row" style={rootStyle}>
-          <LayoutItem style={navStyle}>
+          <LayoutItem stretch style={navStyle}>
             <nav>
               <ul>
                 <li style={navItemStyle}>
@@ -49,7 +49,7 @@ class App extends React.Component {
               </ul>
             </nav>
           </LayoutItem>
-          <LayoutItem size='full'>
+          <LayoutItem size='full' stretch>
             <Switch>
               <Route path="/rows">
                 <RowsScreen />

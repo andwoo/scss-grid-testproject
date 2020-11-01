@@ -4,14 +4,17 @@ import { ItemText } from '../components/ItemText'
 
 const containerClass = 'container container--column';
 const containerItemClass = 'container__item container__item--column container__item--active';
+const fullHeightStlye: React.CSSProperties = {
+  height: '100%'
+}
 
 export function ColumnsScreen(): JSX.Element {
   return (
     <React.Fragment>
-      <Layout direction="row">
+      <Layout direction="row" style={fullHeightStlye}>
 
         <LayoutItem size="full" stretch>
-          <Layout direction="column" className={containerClass}>
+          <Layout direction="column" className={containerClass} style={fullHeightStlye}>
             <LayoutItem stretch className={containerItemClass} style={{ minWidth: '60px', minHeight: '50px' }}>
               <ItemText text="none" style={{ paddingTop: '22px' }} />
             </LayoutItem>
@@ -19,7 +22,7 @@ export function ColumnsScreen(): JSX.Element {
         </LayoutItem>
 
         <LayoutItem size="full" stretch>
-          <Layout direction="column" className={containerClass}>
+          <Layout direction="column" className={containerClass} style={fullHeightStlye}>
             <LayoutItem stretch size="full" className={containerItemClass}>
               <ItemText text="full" />
             </LayoutItem>
@@ -27,7 +30,7 @@ export function ColumnsScreen(): JSX.Element {
         </LayoutItem>
 
         <LayoutItem size="full" stretch>
-          <Layout direction="column" className={containerClass}>
+          <Layout direction="column" className={containerClass} style={fullHeightStlye}>
             <LayoutItem stretch size="half" className={containerItemClass}>
               <ItemText text="half" />
             </LayoutItem>
@@ -38,7 +41,7 @@ export function ColumnsScreen(): JSX.Element {
         </LayoutItem>
 
         <LayoutItem size="full" stretch>
-          <Layout direction="column" className={containerClass}>
+          <Layout direction="column" className={containerClass} style={fullHeightStlye}>
             <LayoutItem stretch size="one-quarter" className={containerItemClass}>
               <ItemText text="one-quarter" />
             </LayoutItem>
@@ -49,7 +52,7 @@ export function ColumnsScreen(): JSX.Element {
         </LayoutItem>
 
         <LayoutItem size="full" stretch>
-          <Layout direction="column" className={containerClass}>
+          <Layout direction="column" className={containerClass} style={fullHeightStlye}>
             <LayoutItem stretch size="one-third" className={containerItemClass}>
               <ItemText text="one-third" />
             </LayoutItem>
@@ -60,7 +63,7 @@ export function ColumnsScreen(): JSX.Element {
         </LayoutItem>
 
         <LayoutItem size="full" stretch>
-          <Layout direction="column" className={containerClass}>
+          <Layout direction="column" className={containerClass} style={fullHeightStlye}>
             <LayoutItem stretch size="one-fifth" className={containerItemClass}>
               <ItemText text="one-fifth" />
             </LayoutItem>
@@ -71,7 +74,7 @@ export function ColumnsScreen(): JSX.Element {
         </LayoutItem>
 
         <LayoutItem size="full" stretch>
-          <Layout direction="column" className={containerClass}>
+          <Layout direction="column" className={containerClass} style={fullHeightStlye}>
             <LayoutItem stretch size="two-fifths" className={containerItemClass}>
               <ItemText text="two-fifths" />
             </LayoutItem>

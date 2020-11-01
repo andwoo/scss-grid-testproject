@@ -34,31 +34,29 @@ const navBarLinks = {
   }]
 }
 
-class App extends React.Component {
-  render(): JSX.Element {
-    return (
-      <Router>
-        <Layout direction="row" style={rootStyle}>
-          <LayoutItem stretch>
-            <NavBar {...navBarLinks} />
-          </LayoutItem>
-          <LayoutItem size='full' stretch style={routeStyle}>
-            <Switch>
-              <Route path="/rows">
-                <RowsScreen />
-              </Route>
-              <Route path="/columns">
-                <ColumnsScreen />
-              </Route>
-              <Route path="*">
-                <HomeScreen />
-              </Route>
-            </Switch>
-          </LayoutItem>
-        </Layout >
-      </Router>
-    );
-  }
+const App = (): JSX.Element => {
+  return (
+    <Router>
+      <Layout direction="row" style={rootStyle}>
+        <LayoutItem stretch>
+          <NavBar {...navBarLinks} />
+        </LayoutItem>
+        <LayoutItem size='full' stretch style={routeStyle}>
+          <Switch>
+            <Route path="/rows">
+              <RowsScreen />
+            </Route>
+            <Route path="/columns">
+              <ColumnsScreen />
+            </Route>
+            <Route path="*">
+              <HomeScreen />
+            </Route>
+          </Switch>
+        </LayoutItem>
+      </Layout >
+    </Router>
+  );
 }
 
 export default hot(module)(App);

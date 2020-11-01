@@ -1,0 +1,17 @@
+nav {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+
+  border-bottom: 3px solid $active-colour;
+}
+
+.nav__item {
+  display: inline-block;
+  margin-right: 1rem;
+
+  a {
+    font-size: 1.4rem;
+    font-weight: 300;
+  }
+}

@@ -1,74 +1,86 @@
 import * as React from 'react';
 import { Layout, LayoutItem } from '@andwoo/scss-grid';
+import { ItemText } from '../components/ItemText'
 
-const containerStyle: React.CSSProperties = {
-  width: '100%'
-}
-
-const columnStyle: React.CSSProperties = {
-  backgroundColor: "#dbdbdb",
-  marginTop: '1rem',
-  marginLeft: '1rem',
-  marginBottom: '1rem',
-}
-
-const lastColumnStyle: React.CSSProperties = {
-  ...columnStyle,
-  marginRight: '1rem'
-}
-
-const fontStyle: React.CSSProperties = {
-  fontWeight: 300,
-  textAlign: 'center'
-}
+const containerClass = 'container container--column';
+const containerItemClass = 'container__item container__item--column container__item--active';
 
 export function ColumnsScreen(): JSX.Element {
   return (
     <React.Fragment>
-      <Layout direction="column" style={containerStyle}>
-        <LayoutItem size="full" style={Object.assign({ ...columnStyle }, lastColumnStyle)}>
-          <p style={fontStyle}>full</p>
+      <Layout direction="row">
+
+        <LayoutItem size="full" stretch>
+          <Layout direction="column" className={containerClass}>
+            <LayoutItem stretch className={containerItemClass} style={{ minWidth: '60px', minHeight: '50px' }}>
+              <ItemText text="none" style={{ paddingTop: '22px' }} />
+            </LayoutItem>
+          </Layout>
         </LayoutItem>
-      </Layout>
-      <Layout direction="column" style={containerStyle}>
-        <LayoutItem size="half" style={columnStyle}>
-          <p style={fontStyle}>half</p>
+
+        <LayoutItem size="full" stretch>
+          <Layout direction="column" className={containerClass}>
+            <LayoutItem stretch size="full" className={containerItemClass}>
+              <ItemText text="full" />
+            </LayoutItem>
+          </Layout>
         </LayoutItem>
-        <LayoutItem size="half" style={lastColumnStyle}>
-          <p style={fontStyle}>half</p>
+
+        <LayoutItem size="full" stretch>
+          <Layout direction="column" className={containerClass}>
+            <LayoutItem stretch size="half" className={containerItemClass}>
+              <ItemText text="half" />
+            </LayoutItem>
+            <LayoutItem stretch size="half" className={containerItemClass}>
+              <ItemText text="half" />
+            </LayoutItem>
+          </Layout>
         </LayoutItem>
-      </Layout>
-      <Layout direction="column" style={containerStyle}>
-        <LayoutItem size="one-quarter" style={columnStyle}>
-          <p style={fontStyle}>one quarter</p>
+
+        <LayoutItem size="full" stretch>
+          <Layout direction="column" className={containerClass}>
+            <LayoutItem stretch size="one-quarter" className={containerItemClass}>
+              <ItemText text="one-quarter" />
+            </LayoutItem>
+            <LayoutItem stretch size="three-quarters" className={containerItemClass}>
+              <ItemText text="three-quarter" />
+            </LayoutItem>
+          </Layout>
         </LayoutItem>
-        <LayoutItem size="three-quarters" style={lastColumnStyle}>
-          <p style={fontStyle}>three quarters</p>
+
+        <LayoutItem size="full" stretch>
+          <Layout direction="column" className={containerClass}>
+            <LayoutItem stretch size="one-third" className={containerItemClass}>
+              <ItemText text="one-third" />
+            </LayoutItem>
+            <LayoutItem stretch size="two-thirds" className={containerItemClass}>
+              <ItemText text="two-thirds" />
+            </LayoutItem>
+          </Layout>
         </LayoutItem>
-      </Layout>
-      <Layout direction="column" style={containerStyle}>
-        <LayoutItem size="one-third" style={columnStyle}>
-          <p style={fontStyle}>one third</p>
+
+        <LayoutItem size="full" stretch>
+          <Layout direction="column" className={containerClass}>
+            <LayoutItem stretch size="one-fifth" className={containerItemClass}>
+              <ItemText text="one-fifth" />
+            </LayoutItem>
+            <LayoutItem stretch size="four-fifths" className={containerItemClass}>
+              <ItemText text="four-fifths" />
+            </LayoutItem>
+          </Layout>
         </LayoutItem>
-        <LayoutItem size="two-thirds" style={lastColumnStyle}>
-          <p style={fontStyle}>two thirds</p>
+
+        <LayoutItem size="full" stretch>
+          <Layout direction="column" className={containerClass}>
+            <LayoutItem stretch size="two-fifths" className={containerItemClass}>
+              <ItemText text="two-fifths" />
+            </LayoutItem>
+            <LayoutItem stretch size="three-fifths" className={containerItemClass}>
+              <ItemText text="three-fifths" />
+            </LayoutItem>
+          </Layout>
         </LayoutItem>
-      </Layout>
-      <Layout direction="column" style={containerStyle}>
-        <LayoutItem size="one-fifth" style={columnStyle}>
-          <p style={fontStyle}>one fifth</p>
-        </LayoutItem>
-        <LayoutItem size="four-fifths" style={lastColumnStyle}>
-          <p style={fontStyle}>four fifths</p>
-        </LayoutItem>
-      </Layout>
-      <Layout direction="column" style={containerStyle}>
-        <LayoutItem size="two-fifths" style={columnStyle}>
-          <p style={fontStyle}>two fifts</p>
-        </LayoutItem>
-        <LayoutItem size="three-fifths" style={lastColumnStyle}>
-          <p style={fontStyle}>three fifths</p>
-        </LayoutItem>
+
       </Layout>
     </React.Fragment >
   );

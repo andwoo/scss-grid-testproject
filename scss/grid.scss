@@ -1,0 +1,91 @@
+
+@mixin border-active {
+  border: 3px dashed #{$active-colour};
+}
+
+@mixin border-inactive {
+  border: 3px solid #{$active-colour};
+}
+
+@mixin item--descriptor($content) {
+  content: $content;
+  position: absolute;
+  display: inline-block;
+  background-color: $active-colour;
+  
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-bottom-right-radius: 5px;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: $text-description-colour;
+
+  margin-top: -3px;
+  margin-left: -3px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.container {
+  @include border-inactive;
+}
+
+.container--active {
+  @include border-active;
+}
+
+.container--column {
+  margin-bottom: 1rem;
+}
+
+.container--column::before {
+  @include item--descriptor('<Layout direction="column"/>');
+}
+
+.container--row {
+  margin-right: 1rem;
+}
+
+.container--row::before {
+  @include item--descriptor('<Layout direction="row"/>');
+}
+
+.container__item {
+  @include border-inactive;
+  background-color: $container-colour;
+}
+
+.container__item::before {
+  @include item--descriptor('<LayoutItem/>');
+}
+
+.container__item--column {
+  margin: 1.5rem;
+  margin-right: 0rem;
+}
+
+.container__item--column:last-child {
+  margin-right: 1.5rem;
+}
+
+.container__item--row {
+  margin: 1.5rem;
+  margin-bottom: 0rem;
+}
+
+.container__item--row:last-child {
+  margin-bottom: 1.5rem;
+}
+
+.container__item--active {
+  @include border-active;
+}
+
+.container__item__text {
+  text-align: center;
+  position:relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

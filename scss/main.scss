@@ -1,5 +1,16 @@
 @charset "utf-8";
+@import "./colours.scss";
+@import "./grid.scss";
+@import "./nav.scss";
 
 * {
-  font-family: 'Open Sans', sans-serif;
+  font-family: Arial, 'Open Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  font-weight: 600;
+  color: $text-colour;
+}
+
+html, body {
+  background-color: $container-colour;
 }
